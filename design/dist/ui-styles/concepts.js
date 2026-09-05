@@ -13,12 +13,12 @@ function renderPosterLanguage(language) {
   const play = document.querySelector('.poster-play');
   if (play) {
     const playing = document.body.classList.contains('is-playing');
-    play.innerHTML = `<span>${playing ? 'Ⅱ' : '▶'}</span> ${playing ? (isChinese ? '暂停这段舞蹈' : 'PAUSE THE MOVEMENT') : (isChinese ? play.dataset.playZh : play.dataset.playEn)}`;
+    play.innerHTML = `<span>${playing ? 'Ⅱ' : '▶'}</span> ${playing ? (isChinese ? '先暂停一下' : 'PAUSE THE MOVEMENT') : (isChinese ? play.dataset.playZh : play.dataset.playEn)}`;
   }
   const toggle = document.querySelector('[data-lang-toggle]');
   if (toggle) {
     toggle.classList.toggle('is-zh', isChinese);
-    toggle.setAttribute('aria-label', isChinese ? 'Switch to English' : '切换到中文');
+    toggle.setAttribute('aria-label', isChinese ? '切换到英文' : 'Switch to Chinese');
   }
   localStorage.setItem('dancify-language', language);
 }
@@ -37,7 +37,7 @@ document.querySelectorAll('[data-play]').forEach(button => {
     const playing = document.body.classList.toggle('is-playing');
     if (button.classList.contains('poster-play')) {
       const isChinese = document.documentElement.lang === 'zh-CN';
-      button.innerHTML = playing ? `<span>Ⅱ</span> ${isChinese ? '暂停这段舞蹈' : 'PAUSE THE MOVEMENT'}` : `<span>▶</span> ${isChinese ? button.dataset.playZh : button.dataset.playEn}`;
+      button.innerHTML = playing ? `<span>Ⅱ</span> ${isChinese ? '先暂停一下' : 'PAUSE THE MOVEMENT'}` : `<span>▶</span> ${isChinese ? button.dataset.playZh : button.dataset.playEn}`;
     }
     else if (button.classList.contains('kit-play')) button.textContent = playing ? 'PAUSE' : 'PLAY';
     else button.textContent = playing ? 'Ⅱ' : '▶';
