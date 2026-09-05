@@ -227,6 +227,23 @@ button { cursor: pointer; }
 @media (max-width: 700px) { .sidebar { display: none; } .shell { display: block; } .topbar { padding: 0 18px; } .content { padding: 25px 16px 55px; } .hero, .summary-top { display: block; } .hero p { margin-top: 16px; } .dropzone { min-height: 290px; padding: 21px; } .drop-copy { display: block; } .upload-btn { margin-top: 15px; } .direction-grid { grid-template-columns: 1fr; } .player-layout { grid-template-columns: 1fr; } .player-layout .player-side.right { grid-column: auto; } .stage { min-height: 450px; } .metrics { grid-template-columns: 1fr; } .stat { text-align: left; margin-top: 18px; } .analysis-card { padding: 20px; } .analysis-intro, .analysis-status, .settings-footer { display: block; } .analysis-bpm { text-align: left; margin-top: 16px; } .analysis-status span { display: block; margin: 10px 0 14px; } .analysis-status .cancel-analysis { margin-left: 0; } .lyrics-row { grid-template-columns: 1fr auto; } .lyrics-row label:first-child { grid-column: 1 / -1; } }
 
 :focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+
+/* Compact poster pass: keep the hero in one viewport and guarantee a visible stick figure. */
+.hero-copy { padding-top: 24px; padding-bottom: 16px; }
+.hero-copy h1 { font-size: clamp(52px, 7vw, 96px); }
+.home-grid { gap: 18px; }
+.upload-card { min-height: 330px; padding: 20px; }
+.stage-hero { min-height: 410px; }
+.stage-hero .dancer-large { position: relative; display: block; width: 125px; height: 290px; z-index: 5; opacity: 1; visibility: visible; }
+.stage-hero .dancer-large > div { position: absolute; display: block; opacity: 1; visibility: visible; }
+.stage-hero .stage-orbit { z-index: 1; }
+.stage-hero .poster-word, .stage-hero .stage-note { z-index: 6; }
+.page-head { padding-top: 24px; padding-bottom: 16px; }
+.report-poster { min-height: 390px; }
+.stage-player { min-height: 420px; }
+.player-grid { gap: 12px; }
+.fullscreen.is-fullscreen { color: var(--coral); }
+.poster-shell:fullscreen { width:100vw; min-height:100vh; overflow:auto; padding-left:34px; padding-right:34px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 
 /* Motion Poster: bright editorial system */
